@@ -31,54 +31,71 @@ Display the original, lower contrast, and higher contrast images.
 Split the image (boy.jpg) into B, G, R components and display the channels
 
 ## Program Developed By:
-- **Name:** [Your Name Here]  
-- **Register Number:** [Your Register Number Here]
+- **Name:** konduru santhosh
+- **Register Number:** 212225240074
 
   ### Ex. No. 01
 
-#### 1. Read the image ('Eagle_in_Flight.jpg') using OpenCV imread() as a grayscale image.
+#### 1. Read the image using OpenCV 
 ```python
-# YOUR CODE HERE
+import cv2
+import matplotlib.pyplot as plt
+# Read the image using OpenCV
+img = cv2.imread('BIRD.jpg', cv2.IMREAD_COLOR)
 ```
 
-#### 2. Print the image width, height & Channel.
+#### 2. Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 ```python
-# YOUR CODE HERE
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 
 #### 3. Display the image using matplotlib imshow().
 ```python
-# YOUR CODE HERE
+# Display the image using Matplotlib
+plt.imshow(img_rgb, cmap='viridis')  # You can change 'viridis' to another cmap or use None for RGB images
+plt.title("Original Image")
+plt.axis('on')  # Removes axis ticks and labels
+plt.show()
 ```
 
-#### 4. Save the image as a PNG file using OpenCV imwrite().
+#### 4. load the image
 ```python
-# YOUR CODE HERE
+# Load the image
+image = cv2.imread('BIRD.jpg')
 ```
 
 #### 5. Read the saved image above as a color image using cv2.cvtColor().
 ```python
-# YOUR CODE HERE
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 
-#### 6. Display the Colour image using matplotlib imshow() & Print the image width, height & channel.
+#### 6. Draw a line from top left to right bottom
 ```python
-# YOUR CODE HERE
+img_rgb.shape
+line_img = cv2.line(img_rgb, (0, 0), (8192,4096), (255,0, 0), 15) # cv2.line(image, start_point, end_point, color, thickness)
 ```
 
-#### 7. Crop the image to extract any specific (Eagle alone) object from the image.
+#### 7. load the image
 ```python
-# YOUR CODE HERE
+image = cv2.imread('BIRD.jpg')
 ```
 
-#### 8. Resize the image up by a factor of 2x.
+#### 8. Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 ```python
-# YOUR CODE HERE
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 
-#### 9. Flip the cropped/resized image horizontally.
+#### 9. Draw acircle shape in the image
 ```python
-# YOUR CODE HERE
+img_rgb.shape
+circle_img = cv2.circle(img_rgb,(4096,2048),750,(255,0,0),15) # cv2.circle(image, center, radius, color, thickness)
+plt.imshow(circle_img, cmap='viridis')  
+plt.title("Image with Circle")
+plt.axis('on')  
+plt.show()
 ```
 
 #### 10. Read in the image ('Apollo-11-launch.jpg').
@@ -167,6 +184,25 @@ matrix2 =
 - **ii)** Adjust Image Brightness.  
 - **iii)** Modify Image Contrast.  
 - **iv)** Generate Third Image Using Bitwise Operations.
+- <img width="263" height="434" alt="image" src="https://github.com/user-attachments/assets/db54f04b-dd2a-43ae-b1be-299b9da404ff" />
+<img width="263" height="434" alt="image" src="https://github.com/user-attachments/assets/2e25b220-1ea8-4650-a764-d4eb38aa64e6" />
+<img width="263" height="434" alt="image" src="https://github.com/user-attachments/assets/8fe8cd67-e610-41e3-bd8d-3e41ac9e6de2" />
+<img width="263" height="434" alt="image" src="https://github.com/user-attachments/assets/bb9f6319-6a4b-4fe7-9708-5af0926ae768" />
+<img width="226" height="410" alt="image" src="https://github.com/user-attachments/assets/710419ff-ba96-4064-ae9c-ff5e66dc9869" />
+<img width="263" height="434" alt="image" src="https://github.com/user-attachments/assets/abbdb755-1839-40ef-a1ff-12596e2b826f" />
+<img width="226" height="410" alt="image" src="https://github.com/user-attachments/assets/ac3ccce8-1428-4d1f-a752-4b7358a8de5b" />
+<img width="226" height="410" alt="image" src="https://github.com/user-attachments/assets/23be0516-3438-4bf3-960e-923ce3043cf3" />
+<img width="226" height="410" alt="image" src="https://github.com/user-attachments/assets/c8589060-d599-49e0-8540-9e7158dcc8cb" />
+<img width="226" height="410" alt="image" src="https://github.com/user-attachments/assets/36a82b39-5172-4375-a9e9-b415a45c4855" />
+
+
+
+
+
+
+
+
+
 
 ## Result:
 Thus, the images were read, displayed, brightness and contrast adjustments were made, and bitwise operations were performed successfully using the Python program.
